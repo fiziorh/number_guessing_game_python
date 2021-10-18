@@ -39,6 +39,7 @@ def start_game():
     answer = input("Do you want to play now ? [Y/N]  ")
     lines()
     while answer.lower() == "y":
+        count = 1
         num = random.randint(1, 10)
         lines()
         print("WELCOME TO THE GAME\nYou have to pick a number between 1-10")
@@ -47,16 +48,20 @@ def start_game():
             while number != num:
                 if number > 10 or number < 1:
                     print("It's outside the range, pick between 1-10")
+                    count += 1
                 elif num > number:
                     print("It's higher !!")
+                    count += 1
                 else:
                     print("It's lower !!")
+                    count += 1
                 number = int(input("What's the number ?   "))
         except ValueError:
             print("Oh no, you're not inputing a number, please input a number !!")
         else:
             lines()
             print("Congrats, you guessed the correct number !!")
+            print(f"You have guessed {count} times !!")
             answer = input("Do you want to play again ?  ")
             lines()
     print("Thanks for your time, you can play the game whenever you're ready!!")
