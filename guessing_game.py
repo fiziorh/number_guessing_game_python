@@ -16,7 +16,7 @@ def lines():
     print("-"*10)
 
 
-highscore = []
+highscore = [10]
 
 
 def start_game():
