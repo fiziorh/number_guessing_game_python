@@ -38,7 +38,9 @@ def start_game():
     print("Hello my friend, this is a number guessing game. You have to guess the right number in order for you to win the game !")
     answer = input("Do you want to play now ? [Y/N]  ")
     lines()
+
     while answer.lower() == "y":
+        highscore = []
         count = 1
         num = random.randint(1, 10)
         lines()
@@ -60,8 +62,10 @@ def start_game():
             print("Oh no, you're not inputing a number, please input a number !!")
         else:
             lines()
+            highscore.append(count)
             print("Congrats, you guessed the correct number !!")
             print(f"You have guessed {count} times !!")
+            print(f"your current HIGHSCORE is {min(highscore)}")
             answer = input("Do you want to play again ?  ")
             lines()
     print("Thanks for your time, you can play the game whenever you're ready!!")
