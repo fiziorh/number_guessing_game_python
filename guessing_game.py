@@ -16,6 +16,9 @@ def lines():
     print("-"*10)
 
 
+highscore = []
+
+
 def start_game():
     """Psuedo-code Hints
 
@@ -35,16 +38,17 @@ def start_game():
     """
     # write your code inside this function.
     lines()
-    print("Hello my friend, this is a number guessing game. You have to guess the right number in order for you to win the game !")
+    print(
+        "Hello my friend, this is a number guessing game. You have to guess the right number in order for you to win the game !")
     answer = input("Do you want to play now ? [Y/N]  ")
     lines()
 
     while answer.lower() == "y":
-        highscore = []
         count = 1
         num = random.randint(1, 10)
         lines()
-        print("WELCOME TO THE GAME\nYou have to pick a number between 1-10")
+        print(
+            f"WELCOME TO THE GAME\nYou have to pick a number between 1-10\nYour current HIGHSCORE {min(highscore)}")
         try:
             number = int(input("What is your guess ?   "))
             while number != num:
@@ -65,7 +69,6 @@ def start_game():
             highscore.append(count)
             print("Congrats, you guessed the correct number !!")
             print(f"You have guessed {count} times !!")
-            print(f"your current HIGHSCORE is {min(highscore)}")
             answer = input("Do you want to play again ?  ")
             lines()
     print("Thanks for your time, you can play the game whenever you're ready!!")
